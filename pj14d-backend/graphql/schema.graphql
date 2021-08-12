@@ -1,0 +1,33 @@
+type Report {
+  id: ID!
+  petname: String!
+  result: String!
+}
+
+type ReportSent {
+  id: ID!
+  petname: String!
+  status: String!
+  result: String!
+}
+
+input LabInput {
+  id: ID!
+  petname: String!
+  result: String!
+}
+input SentInput {
+  id: ID!
+  petname: String!
+  status: String!
+  result: String!
+}
+
+type Query {
+  getReport: [Report]
+}
+
+type Mutation {
+  addLabReport(report: LabInput!): Report
+  addSentResult(sent: SentInput!): ReportSent
+}
